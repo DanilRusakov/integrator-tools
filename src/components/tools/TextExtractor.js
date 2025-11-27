@@ -33,33 +33,6 @@ const TextExtractor = () => {
     const [translatedError, setTranslatedError] = useState('');
     const [isApplyDisabled, setIsApplyDisabled] = useState(false);
 
-    const shouldSkipNode = (node) => {
-        // Skip script and style tags
-        if (node.nodeName === 'SCRIPT' || node.nodeName === 'STYLE') {
-            return true;
-        }
-
-        // Skip HTML comments
-        if (node.nodeType === Node.COMMENT_NODE) {
-            return true;
-        }
-
-        // Skip if parent is a tag name or attribute
-        const parent = node.parentElement;
-        if (parent) {
-            // Skip if parent is a tag name (like <!DOCTYPE>, <html>, etc.)
-            if (parent.nodeName === node.textContent.trim()) {
-                return true;
-            }
-            // Skip if parent is an attribute
-            if (parent.getAttribute && parent.getAttribute(node.textContent.trim())) {
-                return true;
-            }
-        }
-
-        return false;
-    };
-
     const handleExtract = () => {
         try {
             setTranslatedText('');
