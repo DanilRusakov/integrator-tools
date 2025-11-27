@@ -25,10 +25,10 @@ const GEO_LANG_MAP = {
     // Africa
     NG: 'EN', GH: 'EN', KE: 'EN', UG: 'EN', TZ: 'EN', RW: 'FR', ZM: 'EN', ZW: 'EN', MW: 'EN', BW: 'EN', NA: 'EN', LS: 'EN', SZ: 'EN', GM: 'EN', SL: 'EN', LR: 'EN', CM: 'FR', CI: 'FR', SN: 'FR', ML: 'FR', BF: 'FR', NE: 'FR', TG: 'FR', BJ: 'FR', MG: 'FR', TD: 'FR', CG: 'FR', CD: 'FR', GA: 'FR', GN: 'FR', CF: 'FR', DJ: 'FR', MR: 'FR',
     ET: 'AM', SO: 'SO',
-    // North America
-    MX: 'ES', GT: 'ES', SV: 'ES', HN: 'ES', NI: 'ES', CR: 'ES', PA: 'ES', CU: 'ES', DO: 'ES', HT: 'FR',
-    // South America
-    AR: 'ES', BO: 'ES', BR: 'PT', CL: 'ES', CO: 'ES', EC: 'ES', PY: 'ES', PE: 'ES', UY: 'ES', VE: 'ES',
+    // North America - only countries not already defined above
+    NI: 'ES', CU: 'ES', HT: 'FR',
+    // South America - only countries not already defined above
+    // (AR, BO, BR, CL, CO, EC, PY, PE, UY, VE already defined in line 6)
     // Oceania
     AU: 'EN', NZ: 'EN', FJ: 'EN', PG: 'EN', SB: 'EN', TO: 'EN', VU: 'EN', WS: 'EN', KI: 'EN', TV: 'EN', NR: 'EN',
     // Others

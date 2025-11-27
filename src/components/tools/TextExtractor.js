@@ -60,42 +60,6 @@ const TextExtractor = () => {
         return false;
     };
 
-    const extractTextFromNode = (node) => {
-        const textNodes = [];
-        
-        // Function to recursively process nodes
-        const processNode = (node, path = []) => {
-            // Skip certain nodes
-            if (shouldSkipNode(node)) {
-                return;
-            }
-
-            // If it's a text node and has non-whitespace content
-            if (node.nodeType === Node.TEXT_NODE) {
-                const text = node.textContent.trim();
-                if (text) {
-                    // Skip if text is just HTML tag or attribute
-                    if (!text.startsWith('<') && !text.startsWith('>') && !text.includes('=')) {
-                        textNodes.push({
-                            text,
-                            path: [...path],
-                            node
-                        });
-                    }
-                }
-                return;
-            }
-
-            // Process child nodes
-            for (let i = 0; i < node.childNodes.length; i++) {
-                processNode(node.childNodes[i], [...path, i]);
-            }
-        };
-
-        processNode(node);
-        return textNodes;
-    };
-
     const handleExtract = () => {
         try {
             setTranslatedText('');
@@ -250,9 +214,9 @@ const TextExtractor = () => {
         let html = processedHtml;
         if (typeof translations === 'object' && translations !== null) {
             Object.entries(translations).forEach(([key, value]) => {
-                // Replace all occurrences of {{key}} with value, escaping curly braces
-                const regex = new RegExp(`\\{\\{${key}\\}\}`, 'g');
-                html = html.replace(regex, value);
+                // Replace all occurrences of {{key}} with value
+                const pattern = `{{${key}}}`;
+                html = html.split(pattern).join(value);
             });
             setProcessedHtmlTranslated(html);
         } else {
