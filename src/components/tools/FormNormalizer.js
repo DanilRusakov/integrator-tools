@@ -275,6 +275,8 @@ const FormNormalizer = () => {
             `<input type="hidden" name="px" value="{px}" />\n` +
             `<input type="hidden" name="clickid" value="{subid}" />\n` +
             `<input type="hidden" name="offer_id" value="{offer_id}" />\n` +
+            `<input type="hidden" name="campaign_id" value="{campaign_id}" />\n` +
+            `<input type="hidden" name="ad_name" value="{ad_name}" />\n` +
             `<input type="hidden" name="utm_source" value="{utm_source}" />\n` +
             `<input type="hidden" name="utm_content" value="{utm_content}" />\n` +
             `<input type="hidden" name="utm_campaign" value="{utm_campaign}" />\n` +
