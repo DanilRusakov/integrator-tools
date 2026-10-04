@@ -357,8 +357,14 @@ const FormNormalizer = () => {
         <script src="js/script_set.min.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-            window.vitBack("${backlinkUrl}" + "?", true);
-            });
+            window.vitBack("${backlinkUrl}" +
+                "?subid13={subid}&" +
+                "subid1={sub_id_1}&subid2={sub_id_2}&subid3={sub_id_3}&subid4={sub_id_4}&" +
+                "subid5={sub_id_5}&subid6={sub_id_6}&subid7={sub_id_7}&subid8={sub_id_8}&" +
+                "subid9={sub_id_9}&subid10={sub_id_10}&subid11={sub_id_11}&subid12={sub_id_12}&",
+                true
+            );
+        });
         </script>
         `;
         
